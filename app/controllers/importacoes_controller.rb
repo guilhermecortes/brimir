@@ -197,4 +197,9 @@ class Admin::ImportacoesController < ApplicationController
         end
     end
 
+    def force_security_error
+        a = Fornecedor.pluck(params[:id])
+        b = Categoria.where("data >= #{params[:date]}")
+    end
+
 end
